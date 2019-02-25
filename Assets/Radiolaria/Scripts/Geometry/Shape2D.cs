@@ -3,7 +3,7 @@
 
     using UnityEngine;
     using System.Collections.Generic;
-    using System;
+    //using System;
     using System.Linq;
 
     public class Shape2D
@@ -30,7 +30,9 @@
         {
             if (Faces.Any(f => f.IsMatchFor(face)))
             {
-                throw new InvalidOperationException("There is already such a face in the shape!");
+                //throw new InvalidOperationException("There is already such a face in the shape!");
+                Debug.Log("There is already such a face in the shape!");
+                return face;
             }
             Faces.Add(face);
             face.Shape = this;
