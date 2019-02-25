@@ -141,12 +141,12 @@
             if (Spring)
                 return;
 
-            if (!p1.UnityObject || !p1.UnityObject.rigidbody || !p2.UnityObject || !p2.UnityObject.rigidbody)
+            if (!p1.UnityObject || !p1.UnityObject.GetComponent<Rigidbody>() || !p2.UnityObject || !p2.UnityObject.GetComponent<Rigidbody>())
                 return;
 
             SpringLenght = lenght;
             Spring = p1.UnityObject.AddComponent<SpringJoint>();
-            Spring.connectedBody = p2.UnityObject.rigidbody;
+            Spring.connectedBody = p2.UnityObject.GetComponent<Rigidbody>();
             Spring.minDistance = lenght * .05f;
             Spring.maxDistance = lenght * .5f;
             Spring.spring = 32.0f;

@@ -219,7 +219,7 @@ public class PolygonAlgorithm{
 			
 			else
 			{
-				Debug.LogError("The " + index +" interior polygon cannot combine to exterior polygon !");
+				//Debug.LogError("The " + index +" interior polygon cannot combine to exterior polygon !");
 				
 			}
 			

@@ -6,7 +6,6 @@ using System;
 
 public class Polygon {
     
-	//private List<Vector2> vertices = new List<Vector2>();
 	public List<Vector2> vertices {
         set; get;
 	}
@@ -40,26 +39,10 @@ public class Polygon {
 
 		vertices = new List<Vector2>(array);
 
-//		CheckClockwise();
 		if(!ForceEarCut.AreVerticesClockwise(vertices, 0, vertices.Count))
 			vertices.Reverse ();
 
-//		OnUpdate();
 	}
-
-//	public void CheckClockwise(){
-//		if(!ForceEarCut.AreVerticesClockwise(vertices, 0, vertices.Count))
-//			vertices.Reverse ();
-//	}
-//
-//	public int verticesCount
-//	{
-//		get {
-//			if(vertices == null)
-//				return 0;
-//			return vertices.Count;
-//		}
-//	}
 
 	public int PreIndex(int index){
 		if(vertices.Count == 0){

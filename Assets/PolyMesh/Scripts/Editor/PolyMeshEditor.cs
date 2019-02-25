@@ -291,8 +291,8 @@ public class PolyMeshEditor : Editor
 
 	void HideWireframe(bool hide)
 	{
-		if (polyMesh.renderer != null)
-			EditorUtility.SetSelectedWireframeHidden(polyMesh.renderer, hide);
+		if (polyMesh.GetComponent<Renderer>() != null)
+			EditorUtility.SetSelectedWireframeHidden(polyMesh.GetComponent<Renderer>(), hide);
 	}
 
 	void RecordUndo()

@@ -33,26 +33,13 @@ public class Shape3DOutline : MonoBehaviour {
 
 	void OnDrawGizmos() {
 		Gizmos.color = Color.yellow;
-//		Gizmos.DrawSphere(transform.position, 1);
 		if(_shape2D!=null){
 			OnCalculateRect();
 			Gizmos.DrawWireCube(transform.position + (Vector3)_rect.center, new Vector3(_rect.width, _rect.height));
-//			Gizmos.
-//			Gizmos.DrawSphere(transform.position +  
 			Gizmos.DrawIcon(transform.position + (Vector3)_rect.center, "w, h : "+ _rect.width +", " + _rect.height);
 		}
 	}
 	
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	private Rect _rect;
 	public Rect rect{
 		get
@@ -86,11 +73,9 @@ public class Shape3DOutline : MonoBehaviour {
 				maxY = v.y;
 			}
 		}
-		//						left, top, right, bottom
+		//left, top, right, bottom
 		_rect = Rect.MinMaxRect(minX, minY, maxX, maxY);
-		//		_dimension = new Vector2(maxX - minX, maxY - minY);
 	}
-//	private MeshFilter _meshFilter;
 
 	public void OnUpdateMesh(){
 
@@ -145,7 +130,7 @@ public class Shape3DOutline : MonoBehaviour {
 		_mesh.uv = uvs.ToArray();
 		_mesh.triangles = tris.ToArray();
 		_mesh.RecalculateNormals();
-		_mesh.Optimize();
+		;
 
 		OnCalculateRect();
 	}
@@ -186,10 +171,6 @@ public class Shape3DOutline : MonoBehaviour {
 			
 			Vector2 perPC = CGAlgorithm.Perp(pVer, cVer, strokeWidth);
 			Vector2 perCN = CGAlgorithm.Perp(cVer, nVer, strokeWidth);
-			
-//			int sign = ForceEarCut.ComputeSpannedAreaSign(pVer, cVer, nVer);
-			//---------------------------------------------------------------------------
-				
 				
 			Vector2 skewPoint = cVer + perPC;
 			//CGAlgorithm.Intersect2D_2SkewSegments(pVer + perPC, cVer + perPC , cVer + perCN, nVer + perCN, ref skewPoint) ;
@@ -211,7 +192,6 @@ public class Shape3DOutline : MonoBehaviour {
 				verts.Add (cVer);
 				if(i == n){
 					verts.Add (firstSkewPoint);
-//					verts.Add (nVer + perCN);
 				}else{
 					verts.Add (nVer);//(nVer + perCN);
 				}
@@ -260,21 +240,6 @@ public class Shape3DOutline : MonoBehaviour {
 	public void CalculateBevelOutline(List<Vector2> vertices, float strokeWidth, ref List<Vector3> verts, ref List<Vector2> uvs, ref List<int> tris)
 	{
 		int n = vertices.Count;
-
-		//List<Vector2> vertices = poly.vertices;//new List<Vector2>(poly.vertices);
-//		if(!isInter && ForceEarCut.AreVerticesClockwise(vertices, 0, n))
-//		{
-//			vertices.Reverse ();
-//		}
-//		if(isInter && !ForceEarCut.AreVerticesClockwise(vertices, 0, n))
-//		{
-//			vertices.Reverse ();
-//		}
-//		poly.CheckClockwise();
-//
-//		List<Vector3> verts = new List<Vector3>();
-//		List<Vector2> uvs = new List<Vector2>();
-//		List<int> tris = new List<int>();
 
 		int initIndex = verts.Count;
 

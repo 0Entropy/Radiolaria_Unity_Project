@@ -58,7 +58,7 @@ public class Shape3DSide : MonoBehaviour {
 		_mesh.uv = uvs.ToArray();
 		_mesh.triangles = tris.ToArray();
 		_mesh.RecalculateNormals();
-		_mesh.Optimize();
+		;
 	}
 	
 	public static void CalculateMeshData(List<Vector2> points, float offset, ref List<Vector3> vertices, ref List<Vector2> uv, ref List<int> triangles){
@@ -109,13 +109,4 @@ public class Shape3DSide : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

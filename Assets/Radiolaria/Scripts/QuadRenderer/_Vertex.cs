@@ -45,7 +45,7 @@ public class _Vertex : _Square
 
     protected override void HandleOnUpdateCollider()
     {
-        if (!collider)
+        if (!GetComponent<Collider>())
         {
             gameObject.AddComponent<BoxCollider>();
         }

@@ -10,7 +10,6 @@ public class ForceField
     float SqrRadius = 25.0f;
 
     Matrix4x4 WorldToGridMat;
-    //Matrix4x4 GridToWorldMat;
 
     public ForceField(int resolution) { }
 

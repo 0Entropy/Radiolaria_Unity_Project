@@ -44,7 +44,7 @@ public class _Block : _Rectangle {
 
     protected override void HandleOnUpdateCollider()
     {
-        if (!collider)
+        if (!GetComponent<Collider>())
         {
             gameObject.AddComponent<BoxCollider>();
         }

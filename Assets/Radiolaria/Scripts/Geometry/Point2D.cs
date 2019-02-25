@@ -58,7 +58,7 @@
 
         public void AddRigidbody()
         {
-            if (UnityObject && UnityObject.rigidbody)
+            if (UnityObject && UnityObject.GetComponent<Rigidbody>())
                 return;
 
             AddGameObject(new GameObject(), 0.1f, true);//GameObject.CreatePrimitive(PrimitiveType.Sphere);//

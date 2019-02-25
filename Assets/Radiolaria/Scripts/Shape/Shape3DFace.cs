@@ -66,7 +66,7 @@ public class Shape3DFace : MonoBehaviour {
 		_mesh.uv = uvs.ToArray();
 		_mesh.triangles = tris.ToArray();
 		_mesh.RecalculateNormals();
-		_mesh.Optimize();
+		;
 	}
 
 	public static void CalculateMeshData(List<Vector2> points, List<int> triangles, Facing facing, float thickness, ref List<Vector3> verts, ref List<Vector2> uvs, ref List<int> tris) {

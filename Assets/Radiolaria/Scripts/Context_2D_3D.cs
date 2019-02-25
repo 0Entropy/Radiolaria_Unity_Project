@@ -282,11 +282,11 @@ public class Context_2D_3D : MonoBehaviour
     {
         foreach (var point in shape.AllPoints)
         {
-            if (point.UnityObject.rigidbody)
+            if (point.UnityObject.GetComponent<Rigidbody>())
             {
                 //point.UnityObject.rigidbody.AddForce(mForceField.Lookup(point.Position));
                 //AttachTorqueForceAt
-                point.UnityObject.rigidbody.AddForce(mForceField.Lookup(point.Position));
+                point.UnityObject.GetComponent<Rigidbody>().AddForce(mForceField.Lookup(point.Position));
 
             }
         }

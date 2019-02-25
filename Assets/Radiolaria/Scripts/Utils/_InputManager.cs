@@ -148,13 +148,13 @@ public class _InputManager : _Singleton<_InputManager>
 	void Update ()
 	{
 
-	#if(((UNITY_ANDROID||UNITY_IPHONE)&&!UNITY_EDITOR))
-		UndateTouch();
-	#else
-		//UpdateMouse();
-	#endif
+#if (((UNITY_ANDROID || UNITY_IPHONE) && !UNITY_EDITOR))
+        	UndateTouch();
+#else
+        UpdateMouse();
+#endif
 
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+        if (Input.GetKeyDown (KeyCode.Escape)) {
 			if(OnEscape != null)
 				OnEscape();
 		}
